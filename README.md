@@ -6,19 +6,18 @@ You need to have `node/npm and git` installed on your computer.
 ## Clone and install repo using git
 
 
-Follow these few steps in order to use this repo 
+Follow these few steps in order to use this repo
 
 ```
-$ git clone https://github.com/Philos-io/es6-koans.philos.io
+$ git clone https://github.com/hackages/es6.koans.git
 
-$ cd es6-koans.philos.io
+$ cd es6.koans
 
-$ npm install
+$ npm i
 ```
 
 
-
-## You can also download the repo from [Github](https://github.com/Philos-io/es6-koans.philos.io)
+## You can also download the repo from [Github](https://github.com/hackages/es6.koans)
 
 ## Recommended Tools
 
