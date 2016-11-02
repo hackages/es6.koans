@@ -1,5 +1,4 @@
-import chai from 'chai';
-let expect = chai.expect;
+import {expect} from 'chai';
 
 describe('Destructuring', ()=>{
 
