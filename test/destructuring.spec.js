@@ -3,13 +3,13 @@ let expect = chai.expect;
 
 describe('Destructuring', ()=>{
 
-  xdescribe('Array...', ()=>{
+  describe('Array...', ()=>{
     let fruits = ['brussels sprout', 'apple', 'beetroot', 'broccoli', 'carrot', 'cherry'];
 
     it('With ES5', ()=>{
-      // TODO: Get the first fruit
+      const first = fruits[0];
       expect(first).to.equal('brussels sprout');
-      // TODO: Get the last fruit
+      const last = fruits[fruits.length - 1];
       expect(last).to.equal('cherry');
     });
 
@@ -22,12 +22,12 @@ describe('Destructuring', ()=>{
   });
 
 
-  xdescribe('Object...', ()=>{
+  describe('Object...', ()=>{
     function getUserInfo(){
       return  {
         id: 8798,
         name: 'Davy Engone',
-        company: 'Philos',
+        company: 'Hackages',
         country: 'Everywhere',
         handles:{
           twitter: 'davyengone',
@@ -49,6 +49,7 @@ describe('Destructuring', ()=>{
     });
 
     it('With ES6 object Destructuring to do the same operation', ()=>{
+      // TODO Extract the required information using the spread operator.
       expect(id).to.be.defined;
       expect(fullName).to.equal('Davy Engone');
       expect(twitter).to.equal('davyengone');
