@@ -16,6 +16,7 @@ $ cd es6.koans
 $ npm i
 ```
 
+Then, execute `npm test` and try to implement the failing tests.
 
 ## You can also download the repo from [Github](https://github.com/hackages/es6.koans)
 
@@ -27,5 +28,3 @@ $ npm i
     3. Any other IDEs
 2. If you haven’t done so just install [Wallabyjs](http://wallabyjs.com)
 3. We will be using babel and Webpack
-
-
