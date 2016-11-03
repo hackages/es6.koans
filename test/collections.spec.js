@@ -75,17 +75,4 @@ describe('ES6 Collections', () => {
       expect(myset.size).to.equal(expected);
     });
   });
-
-  describe('WeakMap', () => {
-    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap
-    it('behaves as a weak map', function() {
-      const weakTranslation = new WeakMap();
-      let english = { word: 'apple' };
-      weakTranslation.set(english, { word: 'pomme'});
-
-      // TODO without executing any code on the WeakMap object, try to satisfy the assertion below
-
-      expect(weakTranslation.get(english)).to.be.undefined;
-    });
-  });
 });
