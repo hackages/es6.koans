@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "npm install",
     "test": "mocha --compilers js:babel-core/register -w",
-    "coverage": "istanbul cover _mocha -- --compilers js:babel-core/register --colors --reporter dot",
+    "coverage": "istanbul cover mocha -- --compilers js:babel-core/register --colors --reporter dot",
     "docs": "esdoc -c esdoc.json && open ./esdoc/index.html"
   },
   "repository": {
