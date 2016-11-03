@@ -4,6 +4,7 @@
   "description": "set of exercises to learn es6 and es7",
   "main": "index.js",
   "scripts": {
+    "pretest": "npm install",
     "test": "mocha --compilers js:babel-core/register -w",
     "coverage": "istanbul cover _mocha -- --compilers js:babel-core/register --colors --reporter dot",
     "docs": "esdoc -c esdoc.json && open ./esdoc/index.html"
