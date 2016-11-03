@@ -81,11 +81,56 @@ describe('Arrow function', () => {
       expect(actual).equal(__);
 
       actual = person.getAgeProperty;
+    });
+  });
+
+  describe('No binding of this & arguments ', () => {
+    it("without its own 'this' context", () => {
+
+      // TODO Modify the growUp function above to satisfy all the assertions below. Using '.bind' is forbidden
+      function Person() {
+        this.age = 10;
+
+        setTimeout(function growUp() {
+          this.age++;
+        }, 1000);
+      }
+
+      const person = new Person();
+
+      expect(person.age).equal(11);
+    });
+    it("without its own 'argument' object ", () => {
+
+      const arguments = 42;
+      const arr = () => arguments;
+
+      let actual = arr();
+
+      expect(actual).equal(__);
+
+      function foo() {
+        const f = function (i) { arguments[0] + i };
+        return f(2);
+      }
+
+      actual = foo(1);
+
+      expect(actual).equal(__);
+
+      function bar() {
+        var f = (i) => arguments[0] + i;
+        return f(2);
+      }
+
+      actual = foo(1);
 
       expect(actual).equal(__);
     });
   });
+
   describe('Add or Sum function...', () => {
+    // TODO:
     it('Should return 5 when passing 2 and 3', () => {
       add(2, 3).should.equal(5);
     });
