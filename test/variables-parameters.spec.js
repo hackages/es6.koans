@@ -1,6 +1,4 @@
-import chai from 'chai';
-let expect = chai.expect;
-
+import {expect} from 'chai';
 
 describe('var, let, const', ()=>{
 
@@ -8,7 +6,7 @@ describe('var, let, const', ()=>{
 
       function iterator(bool){
         if (bool) {
-          var name = 'Philos';
+          var name = 'Hackages';
         }
         return name;
       }
@@ -22,7 +20,7 @@ describe('var, let, const', ()=>{
 
       function iterator(bool){
         if (bool) {
-          let name = 'Philos';
+          let name = 'Hackages';
         }
         return name;
       }

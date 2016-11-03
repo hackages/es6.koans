@@ -1,20 +1,22 @@
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
-// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols
+import {expect} from 'chai';
 
-import chai from 'chai';
-let expect = chai.expect;
-
+/**
+ * The goal here is to implement an iterator function.
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
+ * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols
+ */
 
 describe('iterator function', ()=>{
 
-  xit('Should return an object that provides a next method/function', ()=>{
+  it('Should return an object that provides a next method/function', ()=>{
+
     expect(iterator([]))
       .to.be.an('object')
       .that.has.property('next')
       .to.be.a('function');
 
 
-    xdescribe('next function', ()=>{
+    describe('next function', ()=>{
       it('Should return an object with two properties: done of type boolean and value', () => {
         let returnObject = iterator([]).next();
         expect(returnObject).to.have.a.property('value').to.equal(undefined);

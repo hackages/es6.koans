@@ -1,18 +1,18 @@
 import {expect} from 'chai';
 
-describe('Destructuring', ()=>{
+describe('Destructuring', () => {
 
-  describe('Array...', ()=>{
+  describe('Array...', () => {
     let fruits = ['brussels sprout', 'apple', 'beetroot', 'broccoli', 'carrot', 'cherry'];
 
-    it('With ES5', ()=>{
+    it('With ES5', () => {
       const first = fruits[0];
       expect(first).to.equal('brussels sprout');
       const last = fruits[fruits.length - 1];
       expect(last).to.equal('cherry');
     });
 
-    it('With ES6', ()=>{
+    it('With ES6', () => {
       // TODO: Get the first fruit
       expect(first).to.equal('brussels sprout');
       // TODO: Get the last fruit
@@ -21,14 +21,14 @@ describe('Destructuring', ()=>{
   });
 
 
-  describe('Object...', ()=>{
-    function getUserInfo(){
-      return  {
+  describe('Object...', () => {
+    function getUserInfo() {
+      return {
         id: 8798,
         name: 'Davy Engone',
         company: 'Hackages',
         country: 'Everywhere',
-        handles:{
+        handles: {
           twitter: 'davyengone',
           skype: 'davy_engone'
         }
@@ -36,7 +36,7 @@ describe('Destructuring', ()=>{
     }
 
     // TODO: Retrieve the user's id, name as fullName and twitter handle from getUserInfo
-    it('With ES5', ()=>{
+    it('With ES5', () => {
       let userInfo = getUserInfo();
       let id = userInfo.id;
       let fullName = userInfo.name;
@@ -47,7 +47,7 @@ describe('Destructuring', ()=>{
       expect(twitter).to.equal('davyengone');
     });
 
-    it('With ES6 object Destructuring to do the same operation', ()=>{
+    it('With ES6 object Destructuring to do the same operation', () => {
       // TODO Extract the required information using the spread operator.
       expect(id).to.be.defined;
       expect(fullName).to.equal('Davy Engone');
