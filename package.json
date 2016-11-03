@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Philos-io/es6-koans.philos.io.git"
+    "url": "git+https://github.com/hackages/es6.koans"
   },
   "keywords": [
     "es6",
@@ -22,17 +22,13 @@
   "author": "007@hackages.io",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Philos-io/es6-koans.philos.io/issues"
+    "url": "https://github.com/hackages/es6.koans/issues"
   },
-  "homepage": "https://github.com/Philos-io/es6-koans.philos.io#readme",
+  "homepage": "https://github.com/hackages/es6.koans",
   "devDependencies": {
     "babel": "^5.8.23",
-    "babel-eslint": "^5.0.0",
     "babel-runtime": "^5.8.25",
     "chai": "^3.3.0",
-    "eslint": "^2.3.0",
-    "eslint-config-airbnb": "^6.1.0",
-    "eslint-plugin-react": "^6.1.2",
     "isparta": "^3.1.0",
     "istanbul": "^0.3.22",
     "jsdoc": "^3.3.3",
@@ -41,11 +37,6 @@
     "wallaby-webpack": "0.0.9"
   },
   "dependencies": {
-    "angular": "^1.5.5",
-    "eslint-config-airbnb": "^12.0.0",
-    "eslint-config-airbnb-base": "^9.0.0",
-    "eslint-plugin-import": "^2.0.1",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
     "lodash": "^3.10.1",
     "underscore": "^1.8.3"
   }
