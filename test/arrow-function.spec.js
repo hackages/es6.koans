@@ -1,5 +1,4 @@
 import chai from 'chai';
-const expect = chai.expect;
 chai.should();
 
 // You can implement your solution in another file or inline here

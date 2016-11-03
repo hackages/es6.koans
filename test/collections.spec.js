@@ -1,17 +1,13 @@
-import {expect} from 'chai';
-
 describe('Collection', ()=>{
   describe('Set', ()=>{
-    it('')
+    it('');
   });
 
   describe('WeakMap', ()=>{
-    it('')
+    it('');
   });
 
   describe('Map', ()=>{
-    it('')
+    it('');
   });
-
-
 });

@@ -31,11 +31,12 @@ describe('Class in ES6', () => {
     });
 
     it('Should throw an error if no fullName is passed at the instantiation', () => {
-        (() => {
-          new Human()
-        }).should.throw(Error);
-      })
-      // Getter and setter in ES6 class
+      (() => {
+        new Human();
+      }).should.throw(Error);
+    });
+
+    // Getter and setter in ES6 class
     it('Should have an instance property fullName', () => {
       let obj = new Human({
         fullName: 'Tom Thomas'
@@ -48,7 +49,7 @@ describe('Class in ES6', () => {
       (() => {
         new Human({
           fullName: 12987
-        })
+        });
       }).should.throw(Error);
     });
   });
