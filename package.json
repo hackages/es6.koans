@@ -4,8 +4,8 @@
   "description": "set of exercises to learn es6 and es7",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel/register -w",
-    "coverage": "./node_modules/.bin/_mocha -- --compilers js:babel/register",
+    "test": "mocha --compilers js:babel-core/register -w",
+    "coverage": "./node_modules/.bin/_mocha -- --compilers js:babel-core/register",
     "cover": "./node_modules/.bin/babel-node ./node_modules/.bin/isparta cover ./node_modules/.bin/_mocha",
     "docs": "esdoc -c esdoc.json && open ./esdoc/index.html"
   },
@@ -26,8 +26,9 @@
   },
   "homepage": "https://github.com/hackages/es6.koans",
   "devDependencies": {
-    "babel": "^5.8.23",
-    "babel-runtime": "^5.8.25",
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
     "chai": "^3.3.0",
     "isparta": "^3.1.0",
     "istanbul": "^0.3.22",
