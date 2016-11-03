@@ -20,9 +20,9 @@ describe('Underscore library', ()=>{
       const items = [1,9, 10, undefined];
 
       it('Should throw an error if no argument is passed', ()=>{
-        ()=>{
+        (()=>{
           _.first();
-        }.should.throw(Error);
+        }).should.throw(Error);
       });
 
       it('Should return the first element of the collection', ()=>{
@@ -40,9 +40,9 @@ describe('Underscore library', ()=>{
       const items = [1,9, 10, 'Philos'];
 
       it('Should throw an error if no collection is passed', ()=>{
-        ()=>{
+        (()=>{
           _.last();
-        }.should.throw(Error);
+        }).should.throw(Error);
       });
 
       it('Should return the last element of the collection', ()=>{
@@ -57,7 +57,7 @@ describe('Underscore library', ()=>{
     });
 
     describe('forEach', ()=>{
-      const items = [1,9, 10, 'Philos'];
+      const items = [1,9, 10, 'Hackages'];
 
       it('Should return an array', ()=>{
         expect(_.forEach(items, _.identity)).is.an('array');
@@ -70,7 +70,7 @@ describe('Underscore library', ()=>{
         expect(spy.calledWith(1, 0, items)).equal(true);
         expect(spy.calledWith(9, 1, items)).equal(true);
         expect(spy.calledWith(10, 2, items)).equal(true);
-        expect(spy.calledWith('Philos', 3, items)).equal(true);
+        expect(spy.calledWith('Hackages', 3, items)).equal(true);
       });
     });
 
@@ -84,9 +84,9 @@ describe('Underscore library', ()=>{
     describe('find: find does not mutate the array on which it is called.', ()=>{
 
       xit('Should throw an error if no predicate is passed', ()=>{
-        ()=>{
+        (()=>{
           _.find();
-        }.should.throw(Error);
+        }).should.throw(Error);
       });
 
       it('should return undefined if none of the elements match the predicate', ()=>{
