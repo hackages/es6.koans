@@ -69,8 +69,10 @@ describe('ES6 Collections', () => {
       myset.add('one');
       myset.add('one');
       myset.add('one');
-      // TODO Complete the assertion below. What is the size of the Set?
-      expect(myset.size).to.equal(_);
+      // TODO What is the size of the Set?
+      const expected = CHANGE_ME;
+
+      expect(myset.size).to.equal(expected);
     });
   });
 
