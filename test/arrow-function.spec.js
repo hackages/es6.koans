@@ -140,7 +140,7 @@ describe('Arrow function', () => {
     });
   });
 
-  describe('Add or Sum function...', () => {
+  describe('Add function...', () => {
 
     // TODO Implement the add function below to satisfy all the assertions below.
     const add = function () {
