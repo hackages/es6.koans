@@ -21,6 +21,17 @@ describe('Destructuring', () => {
       // TODO: Get the queue fruit;
       expect(actual).deep.equal(['apple', 'beetroot', 'broccoli', 'carrot', 'cherry']);
     });
+
+    it('With ES6 & default value', () => {
+      let dog = 'Larry';
+      let cat;
+
+      [dog = 'Hector', cat = 'Katy'] = [cat, dog];
+
+      const actual = [dog, cat];
+      const result = ['Hector', 'Katy'];
+      expect(actual).deep.equal(result);
+    });
   });
 
   describe('Object...', () => {
