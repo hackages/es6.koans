@@ -2,12 +2,10 @@ import { expect, should } from 'chai';
 should();
 
 // You can implement your solution in another file or inline here
-
 // You can find more information about arrow-function mdn by following the link below
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 describe('Arrow function', () => {
-<<<<<<< 63b2647caad90797ba41f8efae3713ac77a8bd66
   describe('Invoked through call or apply', () => {
     it('Should not bind this through call', () => {
       const person = {
@@ -84,8 +82,6 @@ describe('Arrow function', () => {
       actual = person.getAgeProperty;
     });
   });
-=======
->>>>>>>  Add actual statement  and correct TODO sentence
 
   describe('No binding of this & arguments ', () => {
     it("without its own 'this' context", (done) => {
@@ -97,8 +93,9 @@ describe('Arrow function', () => {
         setTimeout(function growUp() {
           this.age++;
           expect(actual).equal(11);
-          done();
-          
+
+          done();// done is function used by mocha to manage the async call
+
         }, 2000);
       }
 
@@ -106,32 +103,40 @@ describe('Arrow function', () => {
       const actual = person.age;
 
     });
-    it("without its own 'argument' object ", () => {
+    describe("without its own 'argument' object ", () => {
 
-      const arguments = 42;
-      const arr = () => arguments;
+      it('Should return the arguments variable', () => {
+        const arguments = 42;
+        const arr = () => arguments;
 
-      let actual = arr();
+        let actual = arr();
 
-      expect(actual).equal(__);
+        expect(actual).equal(__);
 
-      function foo() {
-        const f = function (i) { arguments[0] + i };
-        return f(2);
-      }
+      });
+      it('Should override the argument object of foo()', () => {
 
-      actual = foo(1);
+        function foo() {
+          const f = function (i) { arguments[0] + i };
+          return f(2);
+        }
 
-      expect(actual).equal(__);
+        actual = foo(1);
 
-      function bar() {
-        var f = (i) => arguments[0] + i;
-        return f(2);
-      }
+        expect(actual).equal(__);
 
-      actual = bar(1);
+      });
+      it('Should use the argument object of bar', () => {
+        function bar() {
+          var f = (i) => arguments[0] + i;
+          return f(2);
+        }
 
-      expect(actual).equal(__);
+        actual = bar(1);
+
+        expect(actual).equal(__);
+
+      });
     });
   });
 
