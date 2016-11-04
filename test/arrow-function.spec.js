@@ -88,7 +88,7 @@ describe('Arrow function', () => {
 >>>>>>>  Add actual statement  and correct TODO sentence
 
   describe('No binding of this & arguments ', () => {
-    it("without its own 'this' context", () => {
+    it("without its own 'this' context", (done) => {
 
       // TODO Modify the growUp function below to satisfy all the assertions below. Using '.bind' is forbidden
       function Person() {
@@ -96,13 +96,15 @@ describe('Arrow function', () => {
 
         setTimeout(function growUp() {
           this.age++;
-        }, 1000);
+          expect(actual).equal(11);
+          done();
+          
+        }, 2000);
       }
 
       const person = new Person();
       const actual = person.age;
 
-      expect(actual).equal(11);
     });
     it("without its own 'argument' object ", () => {
 
@@ -127,7 +129,7 @@ describe('Arrow function', () => {
         return f(2);
       }
 
-      actual = foo(1);
+      actual = bar(1);
 
       expect(actual).equal(__);
     });
