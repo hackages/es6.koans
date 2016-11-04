@@ -7,6 +7,7 @@ should();
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 describe('Arrow function', () => {
+<<<<<<< 63b2647caad90797ba41f8efae3713ac77a8bd66
   describe('Invoked through call or apply', () => {
     it('Should not bind this through call', () => {
       const person = {
@@ -83,11 +84,13 @@ describe('Arrow function', () => {
       actual = person.getAgeProperty;
     });
   });
+=======
+>>>>>>>  Add actual statement  and correct TODO sentence
 
   describe('No binding of this & arguments ', () => {
     it("without its own 'this' context", () => {
 
-      // TODO Modify the growUp function above to satisfy all the assertions below. Using '.bind' is forbidden
+      // TODO Modify the growUp function below to satisfy all the assertions below. Using '.bind' is forbidden
       function Person() {
         this.age = 10;
 
@@ -97,8 +100,9 @@ describe('Arrow function', () => {
       }
 
       const person = new Person();
+      const actual = person.age;
 
-      expect(person.age).equal(11);
+      expect(actual).equal(11);
     });
     it("without its own 'argument' object ", () => {
 
