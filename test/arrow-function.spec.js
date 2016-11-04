@@ -6,7 +6,6 @@ should();
 // You can find more information about arrow-function mdn by following the link below
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
-
 describe('Arrow function', () => {
   describe('Invoked through call or apply', () => {
     it('Should not bind this through call', () => {
@@ -54,7 +53,37 @@ describe('Arrow function', () => {
 
       expect(actual).equal(__);
     });
+  });
+  describe('Used as methods', () => {
+    it('Should return undefined', () => {
+      const person = {
+        age: 10,
+        getAge: function () {
+          return this.age;
+        },
+        getAgeByArrow: () => {
+          return this ? this.age : undefined;
+        }
+      };
 
+      Object.defineProperty(person, "getAgeProperty", {
+        get: () => {
+          return this ? this.age : undefined;
+        }
+      });
+
+      let actual = person.getAge();
+
+      expect(actual).equal(__);
+
+      actual = person.getAgeByArrow();
+
+      expect(actual).equal(__);
+
+      actual = person.getAgeProperty;
+
+      expect(actual).equal(__);
+    });
   });
   describe('Add or Sum function...', () => {
     it('Should return 5 when passing 2 and 3', () => {
