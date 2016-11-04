@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 
 describe('Destructuring', () => {
 
@@ -14,12 +14,14 @@ describe('Destructuring', () => {
 
     it('With ES6', () => {
       // TODO: Get the first fruit
-      expect(first).to.equal('brussels sprout');
+      let actual;
+      expect(actual).to.equal('brussels sprout');
       // TODO: Get the last fruit
-      expect(last).to.equal('cherry');
+      expect(actual).to.equal('cherry');
+      // TODO: Get the queue fruit;
+      expect(actual).deep.equal(['apple', 'beetroot', 'broccoli', 'carrot', 'cherry']);
     });
   });
-
 
   describe('Object...', () => {
     function getUserInfo() {
