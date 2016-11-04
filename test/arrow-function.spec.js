@@ -2,7 +2,6 @@ import { expect, should } from 'chai';
 should();
 
 // You can implement your solution in another file or inline here
-
 // You can find more information about arrow-function mdn by following the link below
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
@@ -81,11 +80,68 @@ describe('Arrow function', () => {
       expect(actual).equal(__);
 
       actual = person.getAgeProperty;
-
-      expect(actual).equal(__);
     });
   });
+
+  describe('No binding of this & arguments ', () => {
+    it("without its own 'this' context", (done) => {
+
+      // TODO Modify the growUp function below to satisfy all the assertions below. Using '.bind' is forbidden
+      function Person() {
+        this.age = 10;
+
+        setTimeout(function growUp() {
+          this.age++;
+          expect(actual).equal(11);
+
+          done();// done is function used by mocha to manage the async call
+
+        }, 2000);
+      }
+
+      const person = new Person();
+      const actual = person.age;
+
+    });
+    describe("without its own 'argument' object ", () => {
+
+      it('Should return the arguments variable', () => {
+        const arguments = 42;
+        const arr = () => arguments;
+
+        let actual = arr();
+
+        expect(actual).equal(__);
+
+      });
+      it('Should override the argument object of foo()', () => {
+
+        function foo() {
+          const f = function (i) { arguments[0] + i };
+          return f(2);
+        }
+
+        actual = foo(1);
+
+        expect(actual).equal(__);
+
+      });
+      it('Should use the argument object of bar', () => {
+        function bar() {
+          var f = (i) => arguments[0] + i;
+          return f(2);
+        }
+
+        actual = bar(1);
+
+        expect(actual).equal(__);
+
+      });
+    });
+  });
+
   describe('Add or Sum function...', () => {
+    // TODO:
     it('Should return 5 when passing 2 and 3', () => {
       add(2, 3).should.equal(5);
     });
