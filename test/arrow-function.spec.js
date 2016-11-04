@@ -141,9 +141,16 @@ describe('Arrow function', () => {
   });
 
   describe('Add or Sum function...', () => {
-    // TODO:
+
+    // TODO Implement the add function below to satisfy all the assertions below.
+    const add = function () {
+
+    };
+
     it('Should return 5 when passing 2 and 3', () => {
-      add(2, 3).should.equal(5);
+      const actual = add(2, 3);
+
+      actual.should.equal(5);
     });
 
     it('Should throw an error if only one argument is passed', () => {
@@ -152,8 +159,10 @@ describe('Arrow function', () => {
       }).should.throw();
     });
 
+    // TODO Usage of argument variable is forbidden
     it('Should accept more than 2 arguments', () => {
-      add(1, 2, 3, 4).should.equal(10);
+      const actual = add(1, 2, 3, 4);
+      actual.should.equal(10);
     });
 
     it('Should throw an error if any of the arguments is not a number', () => {
@@ -165,15 +174,25 @@ describe('Arrow function', () => {
 
   describe('Lexical this', () => {
     it('Should return the list of fruits', () => {
-      var cart = {
+
+      const cart = {
         owner: 'Davy',
-        fruits: ['apple', 'brussels sprout', 'banana', 'mango'],
+        fruits: ['apple', 'banana'],
         printFruits: function () {
-          this.fruits.forEach(function (f) {
-            console.log(this.owner + " bought " + f);
-          });
+
+          // TODO Modify the function below to satisfy all the assertions below. '.bind' usage is forbidden
+          const printFruits = function (fruit) {
+            return this.owner + " bought " + fruit;
+          };
+          return this.fruits.map(printFruits);
         }
       };
+
+      const actual = cart.printFruits();
+      const result = ['Davy bought apple', 'Davy bought banana'];
+
+      expect(actual).deep.equal(result);
+
     });
   });
 });
