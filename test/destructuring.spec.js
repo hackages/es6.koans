@@ -32,6 +32,29 @@ describe('Destructuring', () => {
       const result = ['Hector', 'Katy'];
       expect(actual).deep.equal(result);
     });
+
+    it('With ES6 & For iterations', () => {
+
+      const people = [
+        {
+          name: "Mike",
+          age: 35
+        },
+        {
+          name: "Tom",
+          age: 25
+        }
+      ];
+
+      let actual = [];
+      
+      // TODO: Write the destructuring and the push statement to satisfy all assertions
+      for (let { } of people) {
+        actual.push();
+      }
+
+      expect(actual).deep.equal(['Mike 25', 'Tom 25']);
+    });
   });
 
   describe('Object...', () => {
