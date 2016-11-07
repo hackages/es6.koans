@@ -51,5 +51,35 @@ describe('Generators', () => {
     });
   });
 
+  describe('Recursion via yield* for output', () => {
+    function* child() {
+      yield 'a';
+      yield 'b';
+    }
+
+    it('Should do nothing', () => {
+      function* parent() {
+        yield 'x';
+        child();
+        yield 'y';
+      }
+
+      const actual = getGeneratorResultInArray(parent);
+      expect(actual).deep.equal(['x', 'y']);
+    });
+
+    it('Should call correctly the child generator', () => {
+      function* parent() {
+        yield 'x';
+        yield 'y';
+        // Call correctly child
+
+      }
+
+      const actual = getGeneratorResultInArray(parent);
+      expect(actual).deep.equal(['x', 'y', 'a', 'b']);
+    });
+  });
+
 });
 
