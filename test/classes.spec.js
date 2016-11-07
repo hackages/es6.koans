@@ -31,7 +31,7 @@ describe('Class in ES6', () => {
       expect(polyFunc.log()).equal('H:3 & W:5');
 
       let polyClass;
-      
+
       // Hint: the declaration position of PolygoneClass is not correct
       (() => {
         polyClass = new PolygoneClass(3, 5);
@@ -52,47 +52,49 @@ describe('Class in ES6', () => {
     });
   });
   describe('Property ...', () => {
+    // Declare and implement the Man class to satisfy all assertions below
 
     it('should have a name property called Human', () => {
-      expect(Human).has.property('name').equal('Human');
+      expect(Man).has.property('name').equal('Man');
     });
 
     it('Should have a property prototype of type object', () => {
-      expect(Human).has.property('prototype').is.a('object');
-      expect(typeof Human.prototype).equal('object');
+      expect(Man).has.property('prototype').is.a('object');
+      expect(typeof Man.prototype).equal('object');
 
-      describe('Human.prototype', () => {
+      describe('Man.prototype', () => {
         it('Should contain a property Walk of type function', () => {
-          expect(Human.prototype).has.property('Walk').is.a('function');
+          expect(Man.prototype).has.property('Walk').is.a('function');
         });
       });
     });
 
     it('Should contain a static property called inject of type array', () => {
-      expect(Human).has.property('inject').is.an('array');
+      expect(Man).has.property('inject').is.an('array');
     });
 
     it('Should throw an error if no fullName is passed at the instantiation', () => {
       (() => {
-        new Human();
+        new Man();
       }).should.throw(Error);
     });
-
-    // Getter and setter in ES6 class
-    it('Should have an instance property fullName', () => {
-      let obj = new Human({
-        fullName: 'Tom Thomas'
-      });
-      expect(obj.fullName).to.be.defined;
-      expect(obj.fullName).to.equal('Tom Thomas');
-    });
-
-    it('It should throw an error if fullName is set to anything else but a string', () => {
-      (() => {
-        new Human({
-          fullName: 12987
+    describe('Getter and Setter in ES6 class', () => {
+      
+      it('Should have an instance property fullName', () => {
+        let obj = new Man({
+          fullName: 'Tom Thomas'
         });
-      }).should.throw(Error);
+        expect(obj.fullName).to.be.defined;
+        expect(obj.fullName).to.equal('Tom Thomas');
+      });
+
+      it('It should throw an error if fullName is set to anything else but a string', () => {
+        (() => {
+          new Man({
+            fullName: 12987
+          });
+        }).should.throw(Error);
+      });
     });
   });
 });
