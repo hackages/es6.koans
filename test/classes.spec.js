@@ -28,7 +28,9 @@ describe('Class in ES6', () => {
         };
       }
 
-      expect(polyFunc.log()).equal('H:3 & W:5');
+      let actual = polyFunc.log();
+
+      expect(actual).equal('H:3 & W:5');
 
       let polyClass;
 
@@ -47,7 +49,9 @@ describe('Class in ES6', () => {
         }
       }
 
-      expect(polyClass.log()).equal('H:3 & W:5');
+      actual = polyClass.log();
+
+      expect(actual).equal('H:3 & W:5');
 
     });
   });
@@ -79,13 +83,15 @@ describe('Class in ES6', () => {
       }).should.throw(Error);
     });
     describe('Getter and Setter in ES6 class', () => {
-      
+
       it('Should have an instance property fullName', () => {
         let obj = new Man({
           fullName: 'Tom Thomas'
         });
-        expect(obj.fullName).to.be.defined;
-        expect(obj.fullName).to.equal('Tom Thomas');
+        const actual = obj.fullName;
+        
+        expect(actual).to.be.defined;
+        expect(actual).to.equal('Tom Thomas');
       });
 
       it('It should throw an error if fullName is set to anything else but a string', () => {
