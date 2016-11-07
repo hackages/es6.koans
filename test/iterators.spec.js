@@ -54,36 +54,71 @@ describe('iterator function', () => {
       });
     });
   });
-  
+
   describe('In action ', () => {
-    class Company {
-      constructor(customers) {
-        this.customers = customers;
-      }
-      // Create a function below to make this.customers iterable
-    }
 
-    it('Company should be iterable by customers', () => {
-      let company = new Company(['Davy', 'Thomas', 'Lars']);
-
-      // TODO Fix the Company class above.
-
-      let actual = (() => {
-        const result = [];
-
-        for (let customer of company) {
-          result.push(customer);
+    describe('Class iterable', () => {
+      class Company {
+        constructor(customers) {
+          this.customers = customers;
         }
-        return result;
-      })();
+        // Create a function below to make this.customers iterable
+      }
 
-      expect(actual).to.deep.equal(['Davy', 'Thomas', 'Lars']);
+      it('Company should be iterable by customers', () => {
+        let company = new Company(['Davy', 'Thomas', 'Lars']);
 
-      actual = [...company];
+        // TODO Fix the Company class above.
 
-      expect(actual).to.deep.equal(['Davy', 'Thomas', 'Lars']);
+        let actual = (() => {
+          const result = [];
+
+          for (let customer of company) {
+            result.push(customer);
+          }
+          return result;
+        })();
+
+        expect(actual).to.deep.equal(['Davy', 'Thomas', 'Lars']);
+
+        actual = [...company];
+
+        expect(actual).to.deep.equal(['Davy', 'Thomas', 'Lars']);
+      });
     });
 
-  });
+    describe('Natural numbers', () => {
 
+      it('Should return natural numbers ', () => {
+
+        function naturalNumbers() {
+          let n = 0;
+          return {
+            [Symbol.iterator]() {
+              return this;
+            },
+            next() {
+              // Implement the next function that will return the next natural numbers
+               return { value: n++ };
+            }
+          }
+        }
+        const iterator = naturalNumbers()[Symbol.iterator]();
+
+        let actual = iterator.next().value;
+        expect(actual).equal(0);
+
+        actual = iterator.next().value;
+        expect(actual).equal(1);
+
+        iterator.next();
+        iterator.next();
+        iterator.next();
+        actual = iterator.next().value
+        expect(actual).equal(5);
+      });
+    });
+
+    
+  });
 });
