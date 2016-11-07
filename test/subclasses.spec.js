@@ -27,7 +27,7 @@ describe('Sub classing ', () => {
     // };
     class Dog extends Animal {
       speak() {
-        return this.name + ' barks.';
+        return [super.speak(),this.name + ' barks.'];
       }
     }
 
@@ -38,7 +38,7 @@ describe('Sub classing ', () => {
 
     actual = d.speak();
 
-    expect(actual).equal(__);
+    expect(actual).deep.equal(__);
   });
 
   it('Should extends traditional function-based "classes" ', () => {
