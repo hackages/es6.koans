@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 
 /**
  * The goal here is to implement an iterator function.
@@ -6,7 +6,7 @@ import {expect} from 'chai';
  * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols
  */
 
-describe('iterator function', ()=>{
+describe('iterator function', () => {
 
   describe('Iterable Protocol', () => {
     it('Should have @@iterator( Symbol.iterator) property', () => {
@@ -53,6 +53,37 @@ describe('iterator function', ()=>{
         });
       });
     });
+  });
+  
+  describe('In action ', () => {
+    class Company {
+      constructor(customers) {
+        this.customers = customers;
+      }
+      // Create a function below to make this.customers iterable
+    }
+
+    it('Company should be iterable by customers', () => {
+      let company = new Company(['Davy', 'Thomas', 'Lars']);
+
+      // TODO Fix the Company class above.
+
+      let actual = (() => {
+        const result = [];
+
+        for (let customer of company) {
+          result.push(customer);
+        }
+        return result;
+      })();
+
+      expect(actual).to.deep.equal(['Davy', 'Thomas', 'Lars']);
+
+      actual = [...company];
+
+      expect(actual).to.deep.equal(['Davy', 'Thomas', 'Lars']);
+    });
+
   });
 
 });
