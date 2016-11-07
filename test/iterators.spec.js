@@ -4,6 +4,7 @@ import { expect } from 'chai';
  * The goal here is to implement an iterator function.
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators
  * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols
+ * http://www.2ality.com/2015/03/es6-generators.html
  */
 
 describe('iterator function', () => {
@@ -99,7 +100,7 @@ describe('iterator function', () => {
             },
             next() {
               // Implement the next function that will return the next natural numbers
-               return { value: n++ };
+              return { value: n++ };
             }
           }
         }
@@ -119,6 +120,30 @@ describe('iterator function', () => {
       });
     });
 
-    
+    describe('ObjectEntries', () => {
+      it('Should iterate over the properties of an object ', () => {
+        function objectEntries(obj) {
+          let propKeys = Reflect.ownKeys(obj);
+          let key;
+
+          return {
+            [Symbol.iterator]() {
+              return this;
+            },
+            next() {
+              // Implement the next function that will return the key and object value of the key
+              
+            }
+          }
+        }
+
+        let jane = { first: 'Jane', last: 'Doe' };
+        const actual = [];
+        for (let [key, value] of objectEntries(jane)) {
+          actual.push(`${key}: ${value}`);
+        }
+        expect(actual).deep.equal(['first: Jane', 'last: Doe']);
+      });
+    });
   });
 });
