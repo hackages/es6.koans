@@ -8,6 +8,22 @@ import {expect} from 'chai';
 
 describe('iterator function', ()=>{
 
+  describe('Iterable Protocol', () => {
+    it('Should have @@iterator( Symbol.iterator) property', () => {
+      // Implement a iterable below to satisfy all assertions
+      let iterable = {
+      };
+
+      // We use the reflection API to get all proper keys
+      const keys = Reflect.ownKeys(iterable);
+
+      expect(iterable)
+        .to.be.an('object')
+        .that.has.property(keys[0])
+        .to.be.a('function');
+    });
+  });
+  
   it('Should return an object that provides a next method/function', ()=>{
 
     expect(iterator([]))
