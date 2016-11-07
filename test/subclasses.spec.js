@@ -40,4 +40,31 @@ describe('Sub classing ', () => {
 
     expect(actual).equal(__);
   });
+
+  it('Should extends traditional function-based "classes" ', () => {
+    function Animal(name) {
+      this.name = name;
+    }
+    Animal.prototype.eat = function () {
+      return 'Eating ...';
+    }
+    Animal.prototype.speak = function () {
+      return this.name + ' makes a noise.';
+    }
+
+    class Dog extends Animal {
+      speak() {
+        return this.name + ' barks.';
+      }
+    }
+
+    const d = new Dog('Mu');
+    let actual = d.eat();
+
+    expect(actual).equal(__);
+
+    actual = d.speak();
+
+    expect(actual).equal(__);
+  });
 });
