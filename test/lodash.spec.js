@@ -1,5 +1,5 @@
 import chai from 'chai';
-import sinon from 'sinon';
+import sinon from 'sinon/pkg/sinon.js';
 const expect = chai.expect;
 chai.should();
 

@@ -42,6 +42,7 @@
     "esdoc": "^0.4.8",
     "eslint": "^3.9.1",
     "eslint-plugin-import": "^2.0.1",
+    "imports-loader": "^0.6.5",
     "istanbul": "^0.4.5",
     "live-server": "^1.1.0",
     "mocha": "^2.3.3",

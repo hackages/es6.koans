@@ -18,8 +18,9 @@ module.exports = {
     path: path.join(__dirname, 'test/dist')
   },
   module: {
-    loaders: [{
-      test: /\.js$/, loader: 'babel-loader', exclude: /node_module/
-    }]
+    loaders: [
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_module/ },
+      { test: /sinon\/pkg\/sinon\.js/, loader: 'imports?define=>false,require=>false' }
+    ]
   }
 };
