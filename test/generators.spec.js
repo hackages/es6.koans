@@ -26,7 +26,7 @@ describe('Generators', () => {
 
     it('Via function expression', () => {
       // Declare and Implement the generator function foo that will satisfy all assertions
-      const foo;
+      let foo;
 
       const actual = getGeneratorResultInArray(foo);
       expect(actual).deep.equal(['d', 1, 'lol']);
@@ -80,6 +80,64 @@ describe('Generators', () => {
       expect(actual).deep.equal(['x', 'y', 'a', 'b']);
     });
   });
+  describe('In action ', () => {
 
+    describe('Natural numbers', () => {
+
+      it('Should return natural numbers ', () => {
+
+        function* naturalNumbers() {
+          // Implement the generator function that will return the next natural numbers
+    
+        }
+        const iterator = naturalNumbers();
+
+        let actual = iterator.next().value;
+        expect(actual).equal(0);
+
+        actual = iterator.next().value;
+        expect(actual).equal(1);
+
+        iterator.next();
+        iterator.next();
+        iterator.next();
+        actual = iterator.next().value
+        expect(actual).equal(5);
+      });
+    });
+
+    describe('ObjectEntries', () => {
+      it('Should iterate over the properties of an object ', () => {
+        function* objectEntries(obj) {
+          let propKeys = Reflect.ownKeys(obj);
+          // Implement the generator function that will return the key and object value of the key
+
+        }
+        let jane = { first: 'Jane', last: 'Doe' };
+        const actual = [];
+        for (let [key, value] of objectEntries(jane)) {
+          actual.push(`${key}: ${value}`);
+        }
+        expect(actual).deep.equal(['first: Jane', 'last: Doe']);
+      });
+    });
+    describe('Take ', () => {
+      it('Should take n first element of the iterable ', () => {
+        function* take(n, iterable) {
+          // Implement the generator function that will return the n first value
+          for (let value of iterable) {
+
+          }
+        }
+        const actual = [];
+        let iterable = [1, 2, 3, 4, 5][Symbol.iterator]();
+        for (let value of take(2,iterable)) {
+          actual.push(value);
+        }
+
+        expect(actual).deep.equal([1, 2]);
+      });
+    });
+  });
 });
 
