@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Koans Part 2</title>
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.1.2/mocha.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="mocha"></div>
+
+	<script src="https://cdn.rawgit.com/jquery/jquery/2.1.4/dist/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.1.2/mocha.js"></script>
+
+  <script>mocha.setup('bdd')</script>
+  <script src="test/dist/01_variables-parameters.spec.js"></script>
+  <script src="test/dist/02_arrow-function.spec.js"></script>
+  <script src="test/dist/03_destructuring.spec.js"></script>
+  <script src="test/dist/04_classes.spec.js"></script>
+  <script src="test/dist/05_subclasses.spec.js"></script>
+  <script src="test/dist/06_collection.spec.js"></script>
+  <script src="test/dist/07_iterators.spec.js"></script>
+  <script src="test/dist/08_generators.spec.js"></script>
+  <script src="test/dist/09_proxy.spec.js"></script>
+  <script src="test/dist/lodash.spec.js"></script>
+
+  <script>
+    mocha.checkLeaks();
+    mocha.globals(['jQuery']);
+    mocha.run();
+  </script>
+</body>
+</html>
