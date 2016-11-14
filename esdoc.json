@@ -1,4 +1,4 @@
 {
-  "source": "./src/underscore/",
+  "source": "./src/lodash/",
   "destination": "./esdoc"
 }
