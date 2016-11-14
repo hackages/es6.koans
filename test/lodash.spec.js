@@ -1,11 +1,12 @@
 import chai from 'chai';
 import sinon from 'sinon';
+
 const expect = chai.expect;
 chai.should();
 
 import * as _ from '../src/lodash/';
 
-describe('Underscore library', () => {
+describe('Lodash library', () => {
 
   describe('identity', () => {
     it('Should return the same value that has been passed', () => {
@@ -106,13 +107,13 @@ describe('Underscore library', () => {
     });
   });
 
-  describe('findIndex', () => {});
+  describe('findIndex', () => { });
 
-  describe('fill', () => {});
+  describe('fill', () => { });
 
-  describe('keys', () => {});
+  describe('keys', () => { });
 
-  describe('values', () => {});
+  describe('values', () => { });
 
-  describe('entries', () => {});
+  describe('entries', () => { });
 });
