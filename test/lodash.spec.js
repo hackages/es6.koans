@@ -3,7 +3,7 @@ import sinon from 'sinon';
 const expect = chai.expect;
 chai.should();
 
-import * as _ from '../src/lodash/index';
+import * as _ from '../src/lodash/';
 
 describe('Underscore library', () => {
 
