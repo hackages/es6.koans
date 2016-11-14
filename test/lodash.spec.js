@@ -6,7 +6,7 @@ chai.should();
 
 import * as _ from '../src/lodash/';
 
-describe('Underscore library', () => {
+describe('Lodash library', () => {
 
   describe('identity', () => {
     it('Should return the same value that has been passed', () => {
