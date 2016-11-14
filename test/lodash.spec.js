@@ -1,5 +1,6 @@
 import chai from 'chai';
-import sinon from 'sinon/pkg/sinon.js';
+import sinon from 'sinon';
+
 const expect = chai.expect;
 chai.should();
 
@@ -106,13 +107,13 @@ describe('Underscore library', () => {
     });
   });
 
-  describe('findIndex', () => {});
+  describe('findIndex', () => { });
 
-  describe('fill', () => {});
+  describe('fill', () => { });
 
-  describe('keys', () => {});
+  describe('keys', () => { });
 
-  describe('values', () => {});
+  describe('values', () => { });
 
-  describe('entries', () => {});
+  describe('entries', () => { });
 });

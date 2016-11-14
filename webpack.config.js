@@ -22,5 +22,10 @@ module.exports = {
       { test: /\.js$/, loader: 'babel-loader', exclude: /node_module/ },
       { test: /sinon\/pkg\/sinon\.js/, loader: 'imports?define=>false,require=>false' }
     ]
+  },
+  resolve : {
+    alias: {
+      sinon: 'sinon/pkg/sinon',
+    },
   }
 };
