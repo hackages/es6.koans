@@ -12,7 +12,7 @@ describe('Lodash library', () => {
     it('Should return the same value that has been passed', () => {
       expect(_.identity(1)).equal(1);
       expect(_.identity({})).to.deep.equal({});
-      expect(_.identity('philos')).to.deep.equal('philos');
+      expect(_.identity('Hackages')).to.deep.equal('Hackages');
     });
   });
 
@@ -38,7 +38,7 @@ describe('Lodash library', () => {
   });
 
   describe('last', () => {
-    const items = [1, 9, 10, 'Philos'];
+    const items = [1, 9, 10, 'Hackages'];
 
     it('Should throw an error if no collection is passed', () => {
       (() => {
@@ -47,21 +47,21 @@ describe('Lodash library', () => {
     });
 
     it('Should return the last element of the collection', () => {
-      expect(_.last(items)).to.deep.equal('Philos');
+      expect(_.last(items)).to.deep.equal('Hackages');
     });
 
     it('Should return the last n elements when a second argument is passed', () => {
-      expect(_.last(items, 0)).equal('Philos');
-      expect(_.last(items, 1)).to.deep.equal(['Philos']);
-      expect(_.last(items, 2)).to.deep.equal([10, 'Philos']);
+      expect(_.last(items, 0)).equal('Hackages');
+      expect(_.last(items, 1)).to.deep.equal(['Hackages']);
+      expect(_.last(items, 2)).to.deep.equal([10, 'Hackages']);
     });
   });
 
   describe('forEach', () => {
     const items = [1, 9, 10, 'Hackages'];
 
-    it('Should return an array', () => {
-      expect(_.forEach(items, _.identity)).is.an('array');
+    it('Should return undefined', () => {
+      expect(_.forEach(items, _.identity)).is.undefined;
     });
 
     it('Should call the callback on every single item by passing the current item, the index and the initial collection', () => {
@@ -83,26 +83,21 @@ describe('Lodash library', () => {
   });
 
   describe('find: find does not mutate the array on which it is called.', () => {
-
-    xit('Should throw an error if no predicate is passed', () => {
+    it('Should throw an error if no predicate is passed', () => {
       (() => {
         _.find();
       }).should.throw(Error);
     });
 
     it('should return undefined if none of the elements match the predicate', () => {
-      const isEven = (num) => {
-        num % 2 === 0;
-      };
+      const isEven = (num) => num % 2 === 0;
       const evens = _.find([1, 3, 7, 5], isEven);
-      expect(evens).equal('undefined');
+      expect(evens).is.undefined;
     });
 
     it('should return the first element that matchs the predicate', () => {
-      const isOdd = (num) => {
-        num % 2 !== 0;
-      };
-      const odds = _.find([10, 2, 3, 4, 5, 6], isOdd);
+      const isOdd = (num) => num % 2 !== 0;
+      const odds = sfind([10, 2, 3, 4, 5, 6], isOdd);
       expect(odds).equal(3);
     });
   });
