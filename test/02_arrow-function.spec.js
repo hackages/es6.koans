@@ -92,15 +92,13 @@ describe('Arrow function', () => {
 
         setTimeout(function growUp() {
           this.age++;
-          expect(actual).equal(11);
+          expect(this.age).equal(11);
 
           done();// done is function used by mocha to manage the async call
-
-        }, 2000);
+        }, 0);
       }
 
       const person = new Person();
-      const actual = person.age;
 
     });
     describe("without its own 'argument' object ", () => {
@@ -117,23 +115,23 @@ describe('Arrow function', () => {
       });
       it('Should override the argument object of foo()', () => {
 
-        function foo() {
-          const f = function (i) { arguments[0] + i };
+        function foo(i) {
+          const f = function () { return arguments[0] + i };
           return f(2);
         }
 
-        actual = foo(1);
+        let actual = foo(1);
 
         expect(actual).equal(__);
 
       });
       it('Should use the argument object of bar', () => {
-        function bar() {
-          var f = (i) => arguments[0] + i;
+        function bar(j) {
+          const f = (i) => arguments[0] + i;
           return f(2);
         }
 
-        actual = bar(1);
+        let actual = bar(1);
 
         expect(actual).equal(__);
 
