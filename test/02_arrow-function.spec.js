@@ -6,194 +6,194 @@ should();
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 describe('Arrow function', () => {
-    describe('Invoked through call or apply', () => {
-        it('Should not bind this through call', () => {
-            const person = {
-                age: 1,
+  describe('Invoked through call or apply', () => {
+    it('Should not bind this through call', () => {
+      const person = {
+        age: 1,
 
-                add: function (age) {
-                    const f = v => v + this.age;
-                    return f(age);
-                },
+        add: function (age) {
+          const f = v => v + this.age;
+          return f(age);
+        },
 
-                addThruCall: function (age) {
-                    let f = v => {
-                        return v + this.age;
-                    };
+        addThruCall: function (age) {
+          let f = v => {
+            return v + this.age;
+          };
 
-                    const hidden = {
-                        age: 2
-                    };
+          const hidden = {
+            age: 2
+          };
 
-                    return f.call(hidden, age);
-                },
-                addThruApply: function (age) {
-                    let f = v => {
-                        return v + this.age;
-                    };
+          return f.call(hidden, age);
+        },
+        addThruApply: function (age) {
+          let f = v => {
+            return v + this.age;
+          };
 
-                    const hidden = {
-                        age: 2
-                    };
+          const hidden = {
+            age: 2
+          };
 
-                    return f.apply(hidden, [age]);
-                }
-            };
+          return f.apply(hidden, [age]);
+        }
+      };
 
-            let actual = person.add(1);
+      let actual = person.add(1);
 
-            expect(actual).equal(__);
+      expect(actual).equal(__);
 
-            actual = person.addThruCall(1);
+      actual = person.addThruCall(1);
 
-            expect(actual).equal(__);
+      expect(actual).equal(__);
 
-            actual = person.addThruApply(1);
+      actual = person.addThruApply(1);
 
-            expect(actual).equal(__);
-        });
+      expect(actual).equal(__);
     });
-    describe('Used as methods', () => {
-        it('Should return undefined', () => {
-            const person = {
-                age: 10,
-                getAge: function () {
-                    return this.age;
-                },
-                getAgeByArrow: () => {
-                    return this ? this.age : undefined;
-                }
-            };
+  });
+  describe('Used as methods', () => {
+    it('Should return undefined', () => {
+      const person = {
+        age: 10,
+        getAge: function () {
+          return this.age;
+        },
+        getAgeByArrow: () => {
+          return this ? this.age : undefined;
+        }
+      };
 
-            Object.defineProperty(person, "getAgeProperty", {
-                get: () => {
-                    return this ? this.age : undefined;
-                }
-            });
+      Object.defineProperty(person, "getAgeProperty", {
+        get: () => {
+          return this ? this.age : undefined;
+        }
+      });
 
-            let actual = person.getAge();
+      let actual = person.getAge();
 
-            expect(actual).equal(__);
+      expect(actual).equal(__);
 
-            actual = person.getAgeByArrow();
+      actual = person.getAgeByArrow();
 
-            expect(actual).equal(__);
+      expect(actual).equal(__);
 
-            actual = person.getAgeProperty;
-        });
+      actual = person.getAgeProperty;
     });
+  });
 
-    describe('No binding of this & arguments ', () => {
-        it("without its own 'this' context", (done) => {
+  describe('No binding of this & arguments ', () => {
+    it("without its own 'this' context", (done) => {
 
-            // TODO Modify the growUp function below to satisfy all the assertions below. Using '.bind' is forbidden
-            function Person() {
-                this.age = 10;
+      // TODO Modify the growUp function below to satisfy all the assertions below. Using '.bind' is forbidden
+      function Person() {
+        this.age = 10;
 
-                setTimeout(function growUp() {
-                    this.age++;
-                    expect(actual).equal(11);
+        setTimeout(function growUp() {
+          this.age++;
+          expect(actual).equal(11);
 
-                    done();// done is function used by mocha to manage the async call
+          done();// done is function used by mocha to manage the async call
 
-                }, 2000);
-            }
+        }, 2000);
+      }
 
-            const person = new Person();
-            const actual = person.age;
+      const person = new Person();
+      const actual = person.age;
 
-        });
-        describe("without its own 'argument' object ", () => {
-
-            it('Should return the arguments variable', () => {
-                // Uncomment this line below 
-                //const arguments = 42;
-                const arr = () => arguments;
-
-                let actual = arr();
-
-                expect(actual).equal(__);
-
-            });
-            it('Should override the argument object of foo()', () => {
-
-                function foo() {
-                    const f = function (i) { arguments[0] + i };
-                    return f(2);
-                }
-
-                actual = foo(1);
-
-                expect(actual).equal(__);
-
-            });
-            it('Should use the argument object of bar', () => {
-                function bar() {
-                    var f = (i) => arguments[0] + i;
-                    return f(2);
-                }
-
-                actual = bar(1);
-
-                expect(actual).equal(__);
-
-            });
-        });
     });
+    describe("without its own 'argument' object ", () => {
 
-    describe('Add function...', () => {
+      it('Should return the arguments variable', () => {
+        // Uncomment this line below
+        //const arguments = 42;
+        const arr = () => arguments;
 
-        // TODO Implement the add function below to satisfy all the assertions below.
-        const add = function () {
+        let actual = arr();
 
-        };
+        expect(actual).equal(__);
 
-        it('Should return 5 when passing 2 and 3', () => {
-            const actual = add(2, 3);
+      });
+      it('Should override the argument object of foo()', () => {
 
-            actual.should.equal(5);
-        });
+        function foo() {
+          const f = function (i) { arguments[0] + i };
+          return f(2);
+        }
 
-        it('Should throw an error if only one argument is passed', () => {
-            (() => {
-                add(2);
-            }).should.throw();
-        });
+        actual = foo(1);
 
-        // TODO Usage of argument variable is forbidden
-        it('Should accept more than 2 arguments', () => {
-            const actual = add(1, 2, 3, 4);
-            actual.should.equal(10);
-        });
+        expect(actual).equal(__);
 
-        it('Should throw an error if any of the arguments is not a number', () => {
-            (() => {
-                add(2, undefined, '2', 10);
-            }).should.throw();
-        });
+      });
+      it('Should use the argument object of bar', () => {
+        function bar() {
+          var f = (i) => arguments[0] + i;
+          return f(2);
+        }
+
+        actual = bar(1);
+
+        expect(actual).equal(__);
+
+      });
+    });
+  });
+
+  describe('Add function...', () => {
+
+    // TODO Implement the add function below to satisfy all the assertions below.
+    const add = function () {
+
+    };
+
+    it('Should return 5 when passing 2 and 3', () => {
+      const actual = add(2, 3);
+
+      actual.should.equal(5);
     });
 
-    describe('Lexical this', () => {
-        it('Should return the list of fruits', () => {
-
-            const cart = {
-                owner: 'Davy',
-                fruits: ['apple', 'banana'],
-                printFruits: function () {
-
-                    // TODO Modify the function below to satisfy all the assertions below. '.bind' usage is forbidden
-                    const printFruits = function (fruit) {
-                        return this.owner + " bought " + fruit;
-                    };
-                    return this.fruits.map(printFruits);
-                }
-            };
-
-            const actual = cart.printFruits();
-            const result = ['Davy bought apple', 'Davy bought banana'];
-
-            expect(actual).deep.equal(result);
-
-        });
+    it('Should throw an error if only one argument is passed', () => {
+      (() => {
+        add(2);
+      }).should.throw();
     });
+
+    // TODO Usage of argument variable is forbidden
+    it('Should accept more than 2 arguments', () => {
+      const actual = add(1, 2, 3, 4);
+      actual.should.equal(10);
+    });
+
+    it('Should throw an error if any of the arguments is not a number', () => {
+      (() => {
+        add(2, undefined, '2', 10);
+      }).should.throw();
+    });
+  });
+
+  describe('Lexical this', () => {
+    it('Should return the list of fruits', () => {
+
+      const cart = {
+        owner: 'Davy',
+        fruits: ['apple', 'banana'],
+        printFruits: function () {
+
+          // TODO Modify the function below to satisfy all the assertions below. '.bind' usage is forbidden
+          const printFruits = function (fruit) {
+            return this.owner + " bought " + fruit;
+          };
+          return this.fruits.map(printFruits);
+        }
+      };
+
+      const actual = cart.printFruits();
+      const result = ['Davy bought apple', 'Davy bought banana'];
+
+      expect(actual).deep.equal(result);
+
+    });
+  });
 });
