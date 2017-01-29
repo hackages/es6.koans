@@ -13,7 +13,7 @@ describe('Sub classing ', () => {
         return this.name + ' makes a noise.';
       }
     }
-    // When uncommenting the animal lass below, you have to comment the animal class above
+    // When uncommenting the animal class below, you have to comment the animal class above
     // const Animal = class {
     //   constructor(name) {
     //     this.name = name;
