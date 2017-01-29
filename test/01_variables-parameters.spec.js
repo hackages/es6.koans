@@ -1,3 +1,5 @@
+import { expect, should } from 'chai';
+
 describe('var, let, const', () => {
 
   describe('var...', () => {
@@ -10,7 +12,9 @@ describe('var, let, const', () => {
     }
 
     it('what do you expect???', () => {
-      //console.log(iterator(false)); // =>
+      const actual = iterator(false);
+
+      expect(actual).equal(__);
     });
   });
 
@@ -23,9 +27,8 @@ describe('var, let, const', () => {
       return name;
     }
 
-
-
     it('what do you expect???', () => {
+      // TODO: uncomment this line below to see what happens when you change var to let
       //console.log(iterator());
     });
   });
@@ -39,6 +42,7 @@ describe('var, let, const', () => {
     }
 
     it('what do you expect???', () => {
+      // TODO: uncomment this line below to see what happens when you change var to const
       //console.log(iterator());
     });
   });
