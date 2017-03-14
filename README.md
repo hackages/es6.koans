@@ -15,7 +15,7 @@ In this set of examples and tests we cover ES6 Koans concepts such as
 
 ```bash
 # clone our repo
-git clone https://github.com/hackages/javascript.koans.git
+git clone https://github.com/hackages/es6.koans
 
 # change directory to our repo
 cd advanced.js.koans
